@@ -13,14 +13,14 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
-          js: 'babel',
+          js: 'babel-loader',
         }
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'stage-0']
@@ -28,7 +28,7 @@ module.exports = {
       },
      {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 102400,
           name: '[name].[ext]?[hash]'
@@ -36,42 +36,42 @@ module.exports = {
       },
       {
           test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-          loader: "url",
+          loader: "url-loader",
           query: {
             name: '[name].[ext]?[hash]&mimetype=application/font-woff'
           }
       },
       {
           test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-          loader: "url",
+          loader: "url-loader",
           query: {
             name: '[name].[ext]?[hash]&mimetype=application/font-woff2'
           }
       },
       {
           test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-          loader: "url",
+          loader: "url-loader",
           query: {
             name: '[name].[ext]?mimetype=application/font-woff2'
           }
       },
       {
           test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-          loader: "url",
+          loader: "url-loader",
           query: {
             name: '[name].[ext]?mimetype=application/font-woff2'
           }
       },
       {
           test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-          loader: "url",
+          loader: "url-loader",
           query: {
             name: '[name].[ext]?mimetype=image/svg+xml'
           }
       },
       {
         test:/\.css$/,
-        loader:'style!css!autoprefixer!less'
+        loader:'style-loader!css-loader!autoprefixer-loader!less-loader'
       }
 
     ]
